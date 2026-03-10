@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Astone Nouvea';
+    src: url('AstoneNouveaRegular.woff2') format('woff2'),
+        url('AstoneNouveaRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
