@@ -1,4 +1,4 @@
-.admin_model{border:var(--border);}
+.admin_model{border:var(--border);background: var(--neutralDarker-50);}
 .admin_model > br{display:none;}
 .admin_model > div:not(:last-of-type){border-bottom:var(--border);}
 .admin_model_top{position:relative; height:75px; padding-left:var(--gap-l);}
