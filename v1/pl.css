@@ -12,5 +12,5 @@ tag.infos{color:var(--co-grp); font-weight:800;}
 .pl_infos{padding:var(--gap); max-height: 280px; overflow: auto; border-bottom: var(--gap) solid transparent;text-align:justify;}
 .pl_grid tag.infos{font-weight:600;}
 .pl_rel{border-top:var(--border); padding:var(--gap);}
-.pl_rel > *{max-height:65px;border-radius:5px;}
+.pl_rel > *{max-height:65px;overflow:auto;border-radius:5px;}
 .pl_rel > img{aspect-ratio:1/1;}
