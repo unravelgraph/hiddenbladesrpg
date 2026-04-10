@@ -5,3 +5,4 @@
  h1.page-title.display-title{opacity: 0.03;right:initial;left:0;font-size:7rem}
 .admin_model_top b{color:var(--co-grp);}
 .admin_model > div:not(.admin_model_top){padding:var(--gap);}
+.admin_model_msg {background: linear-gradient(to right, transparent, var(--co-grp-10));}
