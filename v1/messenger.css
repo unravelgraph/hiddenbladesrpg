@@ -1,3 +1,5 @@
+:root{--button-h: 36px;--FAM-w: 680px;--FAM-h: 500px;}
+
 #FAM,
 #FAM .FAM-inputbox,
 #FAM-msg {
@@ -21,23 +23,26 @@
 #FAM {
   display: grid;
   grid-template-rows: max-content max-content 1fr;
-  color: var(--FAM-fontClr);
-  font-size: var(--FAM-fontSize);
-  background: var(--FAM-pluginBackground);
-  position: fixed;
-  height: 100%;
-  width: 90%;
-  max-width: var(--FAM-windowSize);
-  left: 65px;
+  color: var(--textColor);
+  font-size: 1rem;
+  background: var(--neutral-15);
+  height: var(--FAM-h);
+  width: var(--FAM-w);
   z-index: 99;
   visibility: visible;
   opacity: 1;
-  bottom: 0px;
+  position:absolute;
+  top:initial;
+  bottom: calc(var(--navbar-size) + var(--button-h));
   transition-property: top, right, bottom, left, height, width, margin, opacity, visibility;
   transition-duration: 700ms;
   grid-template-columns: 100%;
-  box-shadow: var(--FAM-shadowBox);
+  border-top:var(--border);
+  border-bottom:var(--border);
+  backdrop-filter:var(--blur) var(--bw);
+  padding: var(--gap);
 }
+body:has(.mainbar.sticky-top) #FAM {position:fixed;bottom:initial;top: calc(var(--navbar-size) + var(--button-h));}
 
 /* Fenetre fermée */
 #FAM[data-hidden="true"] {
@@ -58,25 +63,26 @@
 
 /* Bouton pour ouvrir la fenetre */
 #FAM-button-open {
-  color: var(--accentClr);
-  font-size: 18px;
-  background-color: var(--neutralDark);
-  border-radius: 10px;
-  width: 45px;
-  height: 45px;
-  left: 10px;
-  top: 15px;
+  color: var(--textColor-50);
+  text-transform:lowercase;
+  font:normal italic 1rem monospace;
+  background-color: var(--neutral-15);
+  width: var(--FAM-w);
+  height: var(--button-h);
+  position:absolute;
+  bottom: var(--navbar-size);
+  z-index: 99;
   cursor: pointer;
   transition-property: right;
   transition-duration: 500ms;
-  display: grid;
-  place-items: center;
+  display: flex;
+  gap:var(--gap);
+  padding:var(--gap);
+  backdrop-filter:var(--blur) var(--bw);
 }
 
-#FAM-button-open:hover {
-  background: var(--FAM-accentClr);
-  color: var(--FAM-pluginBackground);
-}
+.mainbar:is(.sticky-top) + #FAM-button-open{position:sticky;bottom:initial;top: var(--navbar-size);}
+#FAM-button-open:hover, #FAM-button-open.open {color: var(--textColor);}
 
 #FAM[data-hidden="false"] ~ #FAM-button-open {
   background: var(--FAM-accentClr);
@@ -85,16 +91,16 @@
 
 /* Entête de la fenetre */
 #FAM-toolbar {
-  color: var(--FAM-titleClr);
-  position: relative;
-  margin: 20px 15px 15px;
+  position: absolute;
+  width: 100%;
+  padding: var(--gap);
+  padding-left: var(--gap-s);
 }
 
 #FAM-toolbar-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 15px;
 }
 
 /* Bouton flèche de retour */
@@ -106,13 +112,7 @@
 
 /* Titre de la fenetre */
 .FAM-maintitle {
-  text-align: left;
-  font-size: var(--FAM-titleSize);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  flex-grow: 99;
-  margin: 0;
+  display: none;
 }
 
 
@@ -127,44 +127,18 @@
   display: grid;
   grid-template-rows: 1fr max-content;
   overflow: auto;
-  background: var(--FAM-chatBackground);
-  border-radius: 10px 10px 0 0;
-  margin: 10px 15px 0 15px;
+  /* background: var(--neutral-15); */
+  margin: 0 21px;
+  height: calc(var(--FAM-h) - var(--button-h) - 6px);
 }
 
 /* Conteneur discussion */
 #FAM-content {
   overflow-y: auto;
   overflow-x: hidden;
-  margin: 0 15px;
-  padding: 30px 20px;
+  padding: 0;
   position: relative;
-}
-
-.FAM-viewing-topic {
-  padding: 0 20px !important;
-}
-
-.FAM-viewing-topic:before,
-.FAM-viewing-topic:after {
-  content: "";
-  display: block;
-  position: sticky;
-  right: 0px;
-  left: 0;
-  height: 80px;
-  z-index: 8;
-  pointer-events: none;
-}
-
-.FAM-viewing-topic:before {
-  top: 0px;
-  background: var(--FAM-gradientTop);
-}
-
-.FAM-viewing-topic:after {
-  bottom: 0;
-  background: var(--FAM-gradientBot);
+  background: var(--neutral-15);
 }
 
 /* Chargement */
@@ -406,16 +380,16 @@ hr.FAM-hr {
 }
 
 #FAM-actions {
-  background-color: var(--FAM-textareaBackground);
-  border-radius: 10px;
-  margin: 10px 35px;
-  align-items: end;
+  margin: 10px 0;
   position: relative;
 }
 
 .FAM-viewing-forum + #FAM-actions,
 .FAM-viewing-topic + #FAM-actions {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--gap);
 }
 
 .FAM-viewing-forum + #FAM-actions {
@@ -441,9 +415,9 @@ hr.FAM-hr {
 }
 
 .FAM-buttons-container {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
+  /* position: absolute; */
+  /* bottom: 15px; */
+  /* right: 15px; */
 }
 
 .FAM-buttons-container > button {
@@ -472,6 +446,8 @@ hr.FAM-hr {
   vertical-align: top;
   position: relative;
   width: 100%;
+  background: var(--neutral-50);
+  border: var(--border);
 }
 
 #FAM-timeout-bar {
@@ -486,9 +462,10 @@ hr.FAM-hr {
 .FAM-chat {
   position: relative;
   cursor: pointer;
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  color: var(--FAM-fontLightClr);
+  display: flex;
+  margin: var(--gap);
+  background: var(--neutralDarker-85);
+  border: 1px solid var(--neutralDarker-15);
 }
 
 .FAM-chat:hover,
@@ -523,6 +500,7 @@ hr.FAM-hr {
 
 .FAM-forum {
   margin-bottom: 10px;
+  background: var(--gradient-10);
 }
 
 .FAM-forum .FAM-chat-title {
@@ -552,21 +530,7 @@ hr.FAM-hr {
   display: block;
 }
 
-.FAM-chat-avatar {
-  grid-row: 2;
-  align-self: center;
-  padding: 15px 5px 15px 20px;
-  border-radius: 10px 0 0 10px;
-  opacity: 0.8;
-}
-
-.FAM-chat-avatar img {
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+.FAM-chat-avatar {display:none;}
 
 .FAM-chat-content {
   grid-column: 2;
@@ -589,21 +553,21 @@ hr.FAM-hr {
 }
 
 .FAM-chat-date {
-  font-size: 12px;
+  font-size: var(--small-size);
   margin-top: 4px;
+  display:flex;
+  flex-direction:row-reverse;
 }
 
 .FAM-chat-date > a.lastpost_link {
   font-weight: 600;
-  color: var(--FAM-fontClr) !important;
+  color: var(--textColor) !important;
   margin-right: 5px;
 }
 
 .FAM-chat-date > strong {
-  margin-left: 5px;
-  background-color: var(--FAM-msgBackground);
-  padding: 0px 4px 0px;
-  border-radius: 4px;
+  margin-right: 5px;
+  font: bold var(--small-size) var(--font);text-transform:uppercase;
 }
 
 .FAM-chat-date > strong a {
@@ -696,9 +660,7 @@ strong.FAM-page-link {
   border: none;
   width: 100%;
   margin: 0;
-  padding: 15px;
-  padding-right: 110px;
-  outline: 0;
+  border: var(--border);
   resize: vertical;
 }
 
@@ -711,46 +673,28 @@ strong.FAM-page-link {
   display: flex;
   margin-bottom: 30px;
   gap: 10px;
+  background: var(--neutralDarker-50);
+  margin: var(--gap-l);
+  border: 1px solid var(--neutralDarker);
 }
 
-.FAM-msg-avatar {
-  width: 35px;
-  height: 35px;
-  padding: 2px;
-  border-radius: 100%;
-  overflow: hidden;
-  position: relative;
-  top: 50%;
-  align-self: flex-end;
-}
-
-.FAM-msg-online .FAM-msg-avatar {
-  border-color: #39f;
-}
-
-.FAM-msg-avatar img {
-  height: 100%;
-  width: 100%;
-  border-radius: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.FAM-msg.FAM-my-msg {
-  flex-direction: row-reverse;
-}
+.FAM-msg-avatar {display:none;}
 
 .FAM-msg-box {
-  float: right;
-  width: 80%;
-  width: calc(100% - 48px);
-  padding-left: 10px;
+  padding: var(--gap);
+  width: 100%;
+}
+
+.FAM-msg:not(:has(.FAM-sujetadmin)) {
+  .FAM-msg-box{display: flex;align-items:baseline;flex-direction: row-reverse;justify-content: flex-end;}
 }
 
 .FAM-msg-content {
-  display: flex;
+  display: grid;
   gap: 7px;
   position: relative;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .FAM-msg-editing .FAM-msg-text {
@@ -759,22 +703,9 @@ strong.FAM-page-link {
   align-items: flex-end;
 }
 
-.FAM-my-msg .FAM-msg-text {
-  background: var(--FAM-myMsgBackground);
-  border-radius: 17px 17px 6px 17px;
-  padding: 8px 15px 8px 20px;
-  float: right;
-}
 
 .FAM-msg-text {
   font-size: 14px;
-  background: var(--FAM-msgBackground);
-  border-radius: 17px 17px 17px 6px;
-  padding: 8px 20px 8px 15px;
-}
-
-.FAM-my-msg .FAM-msg-content {
-  flex-direction: row-reverse;
 }
 
 .FAM-msg-text .fa-circle-o-notch {
@@ -807,7 +738,7 @@ strong.FAM-page-link {
 
 .FAM-msg-date,
 .FAM-msg-name {
-  font-size: 12px;
+  font-size: var(--small-size);
   width: 100%;
   height: 20px;
   line-height: 24px;
@@ -818,13 +749,15 @@ strong.FAM-page-link {
   color: var(--FAM-fontLightClr);
 }
 
+.FAM-msg-date{color:var(--textColor-50);text-transform:uppercase;font-family:monospace;}
+.FAM-msg-date:before{content:'('}
+.FAM-msg-date:after{content:'):'; margin-right:var(--gap-s);}
+
 .FAM-name-mention {
   cursor: pointer;
 }
 
-.FAM-my-msg .FAM-msg-info {
-  flex-direction: row-reverse;
-}
+.FAM-name-mention, .FAM-name-mention *{font: bold var(--small-size) var(--font);text-transform:uppercase;}
 
 .FAM-msg-error .FAM-msg-content:before {
   border-left-color: #f33;
@@ -856,7 +789,6 @@ strong.FAM-page-link {
 }
 
 .FAM-msg-text .FAM-attachment td {
-  color: var(--FAM-fontClr);
   font-size: 14px;
   min-height: 20px;
   line-height: 20px;
@@ -878,8 +810,6 @@ strong.FAM-page-link {
 }
 
 #FAM .FAM-msg-actions {
-  margin-top: -12px;
-  height: 25px;
   white-space: nowrap;
   visibility: hidden;
   opacity: 0;
@@ -887,11 +817,11 @@ strong.FAM-page-link {
   align-items: center;
   gap: 5px;
   transition: 300ms;
+  justify-content: flex-end;
 }
 
 #FAM .FAM-msg:hover .FAM-msg-actions {
   visibility: visible;
-  margin-top: 5px;
   opacity: 1;
 }
 
@@ -899,6 +829,7 @@ strong.FAM-page-link {
   display: flex;
   align-items: center;
   gap: 5px;
+  justify-content: flex-end;
 }
 
 [data-compact="yes"] {
@@ -925,7 +856,7 @@ strong.FAM-page-link {
 }
 
 .FAM-msg-button:hover {
-  color: var(--FAM-buttonHover);
+  color: var(--co2-50);
 }
 
 .FAM-edit-button {
@@ -1137,8 +1068,9 @@ blockquote.FAM-codebox > div {
 #FAM-tab-container {
   height: 30px;
   position: relative;
-  margin: 0 15px;
   display: flex;
+  margin: 0 21px;
+  background: var(--neutral-50);
 }
 
 #FAM-tab-add {
@@ -1149,16 +1081,11 @@ blockquote.FAM-codebox > div {
   top: 0;
   display: flex;
   align-items: center;
-  background: var(--FAM-chatBackground);
-  color: var(--FAM-fontClr);
-  border-radius: 5px;
   padding: 0 8px;
-  margin-left: 5px;
 }
 
 #FAM-tab-add:hover {
-  background: var(--FAM-accentClr);
-  color: var(--FAM-pluginBackground);
+  background: var(--neutral-50);
 }
 
 #FAM-tabs {
@@ -1182,7 +1109,6 @@ blockquote.FAM-codebox > div {
   top: 0;
   bottom: 0;
   width: 20%;
-  background: var(--FAM-gradient);
   z-index: 5;
   pointer-events: none;
 }
@@ -1192,8 +1118,7 @@ blockquote.FAM-codebox > div {
 }
 
 #FAM-tabs::-webkit-scrollbar-thumb {
-  background-color: var(--FAM-accentClr);
-  border-radius: 3px;
+  background: var(--gradient-50);
 }
 
 #FAM-tabs::-webkit-scrollbar-track {
@@ -1208,8 +1133,6 @@ blockquote.FAM-codebox > div {
 }
 
 .FAM-tab {
-  background: var(--FAM-chatBackground);
-  border-radius: 5px;
   position: relative;
   display: inline-block;
   align-items: center;
@@ -1217,6 +1140,7 @@ blockquote.FAM-codebox > div {
   padding: 0 8px;
   display: flex;
   width: 130px;
+  color: var(--textColor-50);
 }
 
 .FAM-tab i {
@@ -1226,8 +1150,7 @@ blockquote.FAM-codebox > div {
 }
 
 .FAM-tab:hover {
-  background: var(--FAM-accentClr);
-  color: var(--FAM-pluginBackground);
+  background: var(--neutral-50);
 }
 
 .FAM-tab:hover i {
@@ -1236,12 +1159,14 @@ blockquote.FAM-codebox > div {
 
 .FAM-tab.FAM-tab-active {
   font-weight: 700;
-  background: var(--FAM-accentClr);
-  color: var(--FAM-pluginBackground);
+  background: var(--neutral-15);
+  color: var(--textColor);
+  border-bottom: 2px solid var(--co2-10);
+  border-image: var(--gradient-50) 1;
 }
 
 .FAM-tab-name {
-  font-size: 12px;
+  font-size: var(--small-size);
   width: 80%;
   width: calc(100% - 16px);
   white-space: nowrap;
@@ -1258,22 +1183,6 @@ blockquote.FAM-codebox > div {
 
 #FAM-about {
   text-align: center;
-}
-
-.FAM-title {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.FAM-title a {
-  text-decoration: none !important;
-}
-
-.FAM-title i {
-  font-size: 36px;
-  vertical-align: -2px;
-  margin-right: 3px;
 }
 
 #FAM #FAM-service-title a {
@@ -1304,3 +1213,5 @@ blockquote.FAM-codebox > div {
   padding: 10px;
   z-index: 999;
 }
+
+.FAM-viewing-category {margin-bottom: 30px;}
