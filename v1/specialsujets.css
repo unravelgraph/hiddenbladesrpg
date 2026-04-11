@@ -1,1 +1,15 @@
-
+.panel:has(.nav[href="/f22-systeme"]) + .allposts .post:not(:has(.sujetadmin)) {grid-template:auto 1fr / auto 1fr;align-items:start;
+    > *:not(.post_head, .post_main), .post_name, .post_head > .contents, .rep-nb {display:none!important;}
+    .post_main{flex-direction:column-reverse;position:relative;}
+    .post_message{grid-row:1/2;padding:var(--gap-l);padding-bottom:40px; display:grid; grid-template-columns: 1fr auto;width:100%;}
+    .post_details{position:absolute;opacity:0;transition:opacity .5s ease;}
+    &:hover .post_details{opacity:1;}
+    .post_details, .edition-buttons{flex-direction:row;width: fit-content;}
+    .edition-buttons [class^="btn-"]:hover .button_name, .rep-button:hover .button_name{top:-25px;left:initial;}
+    .post_date{writing-mode:horizontal-tb;white-space:nowrap;}
+    .post_head{border:none;background:transparent;grid-column:1/2;}
+    .post_pseudo{font:bold 1rem var(--font);position:relative;opacity:1;text-transform:uppercase;}
+    .post_pseudo a, .post_pseudo strong{font-weight:bold;}
+    .post_pseudo:after{content:' :';}
+    .fa_like_list{margin:0;}
+}
