@@ -9,7 +9,7 @@
     .post_date{writing-mode:horizontal-tb;white-space:nowrap;}
     .post_head{border:none;background:transparent;grid-column:1/2;}
     .post_pseudo{font:bold 1rem var(--font);position:relative;opacity:1;text-transform:uppercase;}
-    .post_pseudo a, .post_pseudo strong{font-weight:bold;}
+    .post_pseudo *{font-weight:bold;}
     .post_pseudo:after{content:' :';}
     .fa_like_list{margin:0;}
 }
