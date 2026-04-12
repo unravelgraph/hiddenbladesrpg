@@ -27,10 +27,8 @@
 .panel:has(.nav[href="/f22-systeme"]) ~ .allposts .post:not(:has(.sujetadmin)) {grid-template:auto 1fr / 1fr;
     .post_message{grid-row:1/2;padding:var(--gap-l);padding-bottom:40px;display: flex;gap: var(--gap-s);width:100%;flex-wrap: wrap;}
     .post_head{border:none;background:transparent;grid-column:1/2;padding-right:var(--gap-s);}
-    .post_pseudo{font:bold 1rem var(--font);position:relative;opacity:1;text-transform:uppercase;}
-    .post_pseudo *{font-weight:bold;}
-    .post_pseudo:after{content:' :';}
-    
+    .post_pseudo{position:relative;opacity:1;text-transform:uppercase;}
+    .post_pseudo:after{content:' :';} 
 }
 
 .panel:has(.nav[href="/f23-registre-des-astres"]) ~ .allposts .post:not(:has(.sujetadmin)) {grid-template:auto 1fr / 1fr;margin:0 auto;
