@@ -523,6 +523,10 @@ hr.FAM-hr {
   margin-top: 4px;
   display:flex;
   flex-direction:row-reverse;
+  justify-content: start;
+  font-family: monospace;
+  text-transform: lowercase;
+  color: var(--textColor-50);
 }
 
 .FAM-chat-date > a.lastpost_link {
