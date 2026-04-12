@@ -703,7 +703,8 @@ strong.FAM-page-link {
 
 .FAM-msg-info {
   display: flex;
-  gap: 5px;
+  flex-wrap: wrap;
+  gap: var(--gap-s);
   clear: both;
 }
 
@@ -717,7 +718,6 @@ strong.FAM-page-link {
   text-overflow: ellipsis;
   overflow: hidden;
   flex-basis: fit-content;
-  color: var(--FAM-fontLightClr);
 }
 
 .FAM-msg-date{color:var(--textColor-50);text-transform:uppercase;font-family:monospace;}
