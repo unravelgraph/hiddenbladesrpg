@@ -728,6 +728,9 @@ strong.FAM-page-link {
 .FAM-msg-date:before{content:'('}
 .FAM-msg-date:after{content:'):'; margin-right:var(--gap-s);}
 
+.FAM-msg-date:empty{display:none;}
+.FAM-msg-info:has(.FAM-msg-date:empty) .FAM-msg-name:after{content:' :'; margin-right:var(--gap-s);}
+
 .FAM-name-mention {
   cursor: pointer;
 }
