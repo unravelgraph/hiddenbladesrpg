@@ -33,7 +33,7 @@
   opacity: 1;
   position:absolute;
   top:initial;
-  bottom: calc(var(--navbar-size) + var(--button-h));
+  bottom: var(--navbar-size);
   transition-property: top, right, bottom, left, height, width, margin, opacity, visibility;
   transition-duration: 700ms;
   grid-template-columns: 100%;
@@ -42,7 +42,7 @@
   backdrop-filter:var(--blur) var(--bw);
   padding: var(--gap);
 }
-body:has(.mainbar.sticky-top) #FAM {position:fixed;bottom:initial;top: calc(var(--navbar-size) + var(--button-h));}
+body:has(.mainbar.sticky-top) #FAM {position:fixed;bottom:initial;top: var(--navbar-size);}
 
 /* Fenetre fermée */
 #FAM[data-hidden="true"] {
@@ -65,20 +65,15 @@ body:has(.mainbar.sticky-top) #FAM {position:fixed;bottom:initial;top: calc(var(
 #FAM-button-open {
   color: var(--textColor-50);
   text-transform:lowercase;
-  font:normal italic 1rem monospace;
-  background-color: var(--neutral-15);
-  width: var(--FAM-w);
-  height: var(--button-h);
-  position:absolute;
-  bottom: var(--navbar-size);
+  font:normal italic var(--small-size) monospace;
   z-index: 99;
   cursor: pointer;
   transition-property: right;
   transition-duration: 500ms;
   display: flex;
   gap:var(--gap);
-  padding:var(--gap);
-  backdrop-filter:var(--blur) var(--bw);
+  padding:var(--gap-s) var(--gap);
+  z-index:0;
 }
 
 .mainbar:is(.sticky-top) + #FAM-button-open{position:sticky;bottom:initial;top: var(--navbar-size);}
