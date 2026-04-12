@@ -479,28 +479,10 @@ hr.FAM-hr {
 }
 
 .FAM-forum-name,
-.FAM-topic-name {
-  display: none;
-  font-size: 12px;
-  margin: 20px 20px 10px;
-  text-transform: uppercase;
-  grid-column: 1 / span 2;
-  font-weight: 600;
-}
-
-.FAM-forum-name i,
-.FAM-topic-name i {
-  margin-right: 5px;
-}
-
-.FAM-forum:nth-of-type(1) .FAM-forum-name,
-.FAM-pagination + .FAM-forum:nth-child(2) .FAM-forum-name {
-  display: block;
-}
+.FAM-topic-name {display: none;}
 
 .FAM-forum {
   margin-bottom: 10px;
-  background: var(--gradient-10);
 }
 
 .FAM-forum .FAM-chat-title {
@@ -519,17 +501,6 @@ hr.FAM-hr {
 .FAM-chat-date > a.lastpost_link:after {
   content: ",";
 }
-
-.FAM-forum .FAM-chat-avatar,
-.FAM-forum .FAM-chat-content {
-  background-color: var(--FAM-pluginBackground);
-}
-
-.FAM-forum + .FAM-topic > .FAM-topic-name,
-.FAM-pagination + .FAM-topic > .FAM-topic-name {
-  display: block;
-}
-
 .FAM-chat-avatar {display:none;}
 
 .FAM-chat-content {
@@ -678,16 +649,21 @@ strong.FAM-page-link {
   border: 1px solid var(--neutralDarker);
 }
 
+.FAM-msg:last-of-type{margin-bottom:var(--gap-l);}
+
 .FAM-msg-avatar {display:none;}
 
 .FAM-msg-box {
   padding: var(--gap);
   width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .FAM-msg:not(:has(.FAM-sujetadmin)) {
   .FAM-msg-box{display: flex;align-items:baseline;flex-direction: row-reverse;justify-content: flex-end;}
 }
+.FAM-msg:has(.FAM-sujetadmin) .FAM-msg-info{display:none;}
 
 .FAM-msg-content {
   display: grid;
@@ -845,8 +821,8 @@ strong.FAM-page-link {
 }
 
 [data-compact="yes"] .FAM-msg-info {
-  visibility: hidden;
-  height: 0px;
+  /* visibility: hidden; */
+  /* height: 0px; */
 }
 
 .FAM-msg-button {
