@@ -36,6 +36,6 @@
     .post_main{flex-direction:column-reverse;position:relative;}
     .post_message{padding:var(--gap-l);padding-bottom:40px; display:grid; grid-template-columns: 1fr auto;width:100%;}
     .post_message > div:first-of-type{display:grid;grid-template-columns:auto 1fr; gap:var(--gap-s);}
-    .info_pnj, .info_pnj g{font:bold 1rem var(--font);text-transform:uppercase; color:var(--co2);}
+    .info_pnj, .info_pnj g{font:650 1rem var(--font);text-transform:uppercase; color:var(--co2);}
     .info_pnj .d{font:normal 1rem var(--font);text-transform:initial; color:initial;}
 }
