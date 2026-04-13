@@ -1,4 +1,4 @@
-.fiche{border:var(--border); background: linear-gradient(315deg, transparent, var(--neutralDarker));}
+.fiche{border:var(--border); background: linear-gradient(315deg, transparent, var(--neutralDarker));font-weight: normal;}
 .fiche .tabs{ position:relative;width:50%; display:grid; grid-template-columns: 1fr 1fr;}
 .fiche .tabs:before {content: '';position: absolute; top: 0; left: 0; height: 100%; width: 200%;background: linear-gradient(to right, var(--neutralDarker), transparent);z-index: -1;}
 .fiche .tabs:after{content:'';position:absolute;top:0;left:0;height:100%;width:50%;background:linear-gradient(to right, transparent, var(--co-grp-50), transparent);transform:translateX(0);transition: transform .5s ease;}
