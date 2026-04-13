@@ -688,13 +688,18 @@ strong.FAM-page-link {
 }
 
 #FAM .FAM-msg-text a {
-  color: inherit !important;
-  text-decoration: underline;
+  color: inherit;
   cursor: pointer;
 }
 
+.FAM-msg-box:has(.FAM-info_pnj) .FAM-msg-info, .FAM-g {
+    display: none;
+}
+
+.FAM-info_pnj, .FAM-info_pnj *{font: 650 1rem var(--font);text-transform: uppercase;color: var(--co2)!important;}
+.FAM-info_pnj{margin-right: var(--gap-s);}
+
 #FAM .FAM-msg-text a:hover {
-  text-decoration: none;
 }
 
 .FAM-msg-text * {
