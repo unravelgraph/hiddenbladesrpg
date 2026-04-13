@@ -74,6 +74,7 @@ body:has(.mainbar.sticky-top) #FAM {position:fixed;bottom:initial;top: var(--nav
   gap:var(--gap);
   padding:var(--gap-s) var(--gap);
   z-index:0;
+  position:relative;
 }
 
 .mainbar:is(.sticky-top) + #FAM-button-open{position:sticky;bottom:initial;top: var(--navbar-size);}
