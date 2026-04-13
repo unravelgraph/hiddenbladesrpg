@@ -8,6 +8,7 @@
     .post_details, .edition-buttons{flex-direction:row;width: fit-content;}
     .edition-buttons [class^="btn-"]:hover .button_name, .rep-button:hover .button_name{bottom:-25px;left:initial;}
     .post_date{writing-mode:horizontal-tb;white-space:nowrap;}
+    .post_message{padding:var(--gap-l);padding-bottom:45px;width:100%;}
     .comment-like{justify-self:end;;display:flex;gap:var(--gap);position:relative; top:-15px;right:var(--gap);}
     .comment-like > button{aspect-ratio:1/1;height:30px;background:var(--neutral-50);display:grid!important;place-items:center;position:relative;}
     .comment-like > button:hover{background:var(--neutral-50)!important;}
@@ -25,7 +26,7 @@
 }
 
 .panel:has(.nav[href="/f22-systeme"]) ~ .allposts .post:not(:has(.sujetadmin)) {grid-template:auto 1fr / 1fr;
-    .post_message{grid-row:1/2;padding:var(--gap-l);padding-bottom:40px;display: flex;gap: var(--gap-s);width:100%;flex-wrap: wrap;}
+    .post_message{grid-row:1/2;display: flex;gap: var(--gap-s);flex-wrap: wrap;}
     .post_head{border:none;background:transparent;grid-column:1/2;padding-right:var(--gap-s);}
     .post_pseudo{position:relative;opacity:1;text-transform:uppercase;}
     .post_pseudo:after{content:' :';} 
@@ -34,7 +35,7 @@
 .panel:has(.nav[href="/f23-registre-des-astres"]) ~ .allposts .post:not(:has(.sujetadmin)) {grid-template:auto 1fr / 1fr;margin:0 auto;
     .comment-avatar{display:none!important;}
     .post_main{flex-direction:column-reverse;position:relative;}
-    .post_message{padding:var(--gap-l);padding-bottom:40px; display:grid; grid-template-columns: 1fr auto;width:100%;}
+    .post_message{display:grid; grid-template-columns: 1fr auto;}
     .post_message > div:first-of-type{display:grid;grid-template-columns:auto 1fr; gap:var(--gap-s);}
     .info_pnj, .info_pnj g{font:650 1rem var(--font);text-transform:uppercase; color:var(--co2);}
     .info_pnj .d{font:normal 1rem var(--font);text-transform:initial; color:initial;}
