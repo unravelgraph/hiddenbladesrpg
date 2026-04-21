@@ -6,3 +6,9 @@
 .admin_model_top b{color:var(--co-grp);}
 .admin_model > div:not(.admin_model_top){padding:var(--gap);}
 .admin_model_msg {background: linear-gradient(to right, transparent, var(--co-grp-10));}
+.admin_model_top.grid {grid-template: 1fr/1fr; padding:0;place-items:center;position:relative;}
+.admin_model_top.grid > *{grid-row:1/2;grid-column:1/-1;}
+.admin_model_top.grid > img{position:absolute;filter:grayscale(1);z-index:-1;width:100%;}
+.admin_model_top.grid:has(img+img) > img{width:30%;}
+.admin_model_top.grid:has(img+img) > img:first-of-type{justify-self:start;mask:linear-gradient(to right, black, transparent);}
+.admin_model_top.grid:has(img+img) > img:last-of-type{justify-self:end;mask:linear-gradient(to left, black, transparent);}
