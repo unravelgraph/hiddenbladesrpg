@@ -12,3 +12,33 @@
 .admin_model_top.grid:has(img+img) > img{width:30%;}
 .admin_model_top.grid:has(img+img) > img:first-of-type{justify-self:start;mask:linear-gradient(to right, black, transparent);}
 .admin_model_top.grid:has(img+img) > img:last-of-type{justify-self:end;mask:linear-gradient(to left, black, transparent);}
+
+.encyclopedia {display: grid; gap: var(--gap);width: 96%;}
+  .encyclopedia_filters {display: flex;flex-wrap: wrap; gap: var(--gap);}
+  .encyclopedia_filters input, .encyclopedia_filters select {min-width: 180px;padding: 10px 12px;border: var(--border);background: var(--neutral-50);color: inherit;font: inherit;}
+  .encyclopedia_filters select option {border: var(--border);background: var(--neutralDarker);}
+  #encyclopedia-count {font-size: var(--small-size); opacity: 0.8;}
+  .encyclopedia_results {display: grid;grid-template-columns: repeat(auto-fit, minmax(260px, .5fr));gap: var(--gap);}
+  .encyclopedia_card {gap: var(--gap);padding: var(--gap);border: var(--border);background:var(--neutral-50);max-height: 350px;}
+  .encyclopedia_image {width: 100%;height: 120px;display: block;overflow:clip;position:relative;}
+  .encyclopedia_image img{width:100%;height:100%;}
+  .encyclopedia_card.rumeur .encyclopedia_image{}
+  .encyclopedia_card.rumeur .encyclopedia_image img{opacity:.3;filter: var(--blur);transition:filter .3s ease;}
+  .encyclopedia_card.rumeur .encyclopedia_image:after{content:'rumeur';position:absolute;left:0;bottom:0;padding:var(--gap);text-transform:uppercase; font:650 var(--small-size) var(--font);color: var(--co2);}
+  .encyclopedia_card:hover .encyclopedia_image img{filter:blur(0);}
+  .encyclopedia_image img{width:100%;}
+  .encyclopedia_head {display: flex;justify-content: space-between;align-items: start;gap: var(--gap);}
+  .encyclopedia_title {margin: 0;font-size: var(--title-size);}
+  .encyclopedia_meta {display: flex;flex-wrap: wrap;gap: var(--gap);}
+  span.encyclopedia_badge {background: var(--neutral-50); padding: 0 var(--gap-s); font-size: .8rem;}
+  .encyclopedia_desc {margin: 0; }
+  .encyclopedia_scroll {overflow: auto;padding-right: var(--gap);text-align: justify;}
+  .encyclopedia_scroll:has(.encyclopedia_effet){padding-right: 0;}
+  .encyclopedia_scroll:has(.encyclopedia_effet) > div{flex-grow:1; overflow:auto;}
+  .encyclopedia_effet{min-height:50px;}
+  .i_rarity:after{content:'';margin-left:var(--gap-s);font:normal .9rem var(--font);background:var(--gradient); background-clip:text; color:transparent;}
+  .rarity-commune .i_rarity:after{content:'☆☆☆☆';}
+  .rarity-peu-commune .i_rarity:after{content:'★☆☆☆';}
+  .rarity-rare .i_rarity:after{content:'★★☆☆';}
+  .rarity-epique .i_rarity:after{content:'★★★☆';}
+  .rarity-mythique .i_rarity:after{content:'★★★★';}
