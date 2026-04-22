@@ -13,7 +13,7 @@
 .admin_model_top.grid:has(img+img) > img:first-of-type{justify-self:start;mask:linear-gradient(to right, black, transparent);}
 .admin_model_top.grid:has(img+img) > img:last-of-type{justify-self:end;mask:linear-gradient(to left, black, transparent);}
 
-.encyclopedia {display: grid; gap: var(--gap);width: 96%;}
+.encyclopedia {display: grid; gap: var(--gap);}
   .encyclopedia_filters {display: flex;flex-wrap: wrap; gap: var(--gap);}
   .encyclopedia_filters input, .encyclopedia_filters select {min-width: 180px;padding: 10px 12px;border: var(--border);background: var(--neutral-50);color: inherit;font: inherit;}
   .encyclopedia_filters select option {border: var(--border);background: var(--neutralDarker);}
