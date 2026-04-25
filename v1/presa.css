@@ -5,7 +5,7 @@
 .fiche .tabs:has(.tab[data-tab="presairl"].selected):after{transform:translateX(100%);}}
 .fiche .tab{padding:var(--gap-s) var(--gap-l);position:relative;}
 .fiche .tab, .fiche .tab.selected{background:transparent;}
-.presa.tab_content > .grid {grid-template-columns: 1fr 300px;max-height: 500px;}
+.presa.tab_content > .grid {grid-template-columns: 1fr 300px;max-height: 464px;overflow: clip;}
 .presa_top{padding:var(--gap); border-top:var(--border);}
 .presa_top > display-title{font-size:2.5em;}
 .presa_firstinfo{color:var(--co-grp); font-weight:800;}
