@@ -9,7 +9,7 @@
 .presa_top > display-title{font-size:2.5em;}
 .presa_firstinfo{color:var(--co-grp); font-weight:800;}
 .presa_lvl:after{content:"/120";color:var(--textColor-50);font-weight:normal;}
-.presa_ava {border-left:var(--border);border-top:var(--border);aspect-ratio: 200/320;position:relative;}
+.presa_ava {border-left:var(--border);border-top:var(--border);position:relative;}
 .presa_ava > img {height: 100%; width:100%; position:absolute;}
 .presa_stats{border-top:var(--border); border-bottom:var(--border);height:122px;}
 .presa_stats > div{padding:var(--gap);display:grid;gap:var(--gap-s)}
