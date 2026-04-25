@@ -19,6 +19,6 @@
 .presa_stats > div:nth-of-type(1n+4){border-top:var(--border);}
 .presa_stats .statbar {border: none;height: 12px;background:var(--neutral-50);}
 .presa_stats .statfill{opacity:.6;}
-.presa_infos{padding:var(--gap); overflow: auto; border-bottom: var(--gap) solid transparent;text-align:justify;}
+.presa_infos{padding:var(--gap);height: 100%; overflow: auto; border-bottom: var(--gap) solid transparent;text-align:justify;}
 .presa_stats .presa_firstinfo{font-weight:600;}
 .presa_hrp{border-top:var(--border); padding:var(--gap);}
