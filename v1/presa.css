@@ -5,7 +5,8 @@
 .fiche .tabs:has(.tab[data-tab="presairl"].selected):after{transform:translateX(100%);}}
 .fiche .tab{padding:var(--gap-s) var(--gap-l);position:relative;}
 .fiche .tab, .fiche .tab.selected{background:transparent;}
-.presa.tab_content > .grid {grid-template-columns: 1fr 300px;max-height: 464px;overflow: clip;}
+.presa.tab_content > .grid {grid-template-columns: 1fr 300px;overflow: clip;}
+.presa_main, .presa.tab_content > .grid{max-height: 464px;}
 .presa_top{padding:var(--gap); border-top:var(--border);}
 .presa_top > display-title{font-size:2.5em;}
 .presa_firstinfo{color:var(--co-grp); font-weight:800;}
@@ -18,6 +19,6 @@
 .presa_stats > div:nth-of-type(1n+4){border-top:var(--border);}
 .presa_stats .statbar {border: none;height: 12px;background:var(--neutral-50);}
 .presa_stats .statfill{opacity:.6;}
-.presa_infos{padding:var(--gap); max-height: 280px; overflow: auto; border-bottom: var(--gap) solid transparent;text-align:justify;}
+.presa_infos{padding:var(--gap); overflow: auto; border-bottom: var(--gap) solid transparent;text-align:justify;}
 .presa_stats .presa_firstinfo{font-weight:600;}
 .presa_hrp{border-top:var(--border); padding:var(--gap);}
