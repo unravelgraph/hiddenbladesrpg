@@ -4,6 +4,7 @@
 .fiche .tabs:after{content:'';position:absolute;top:0;left:0;height:100%;width:50%;background:linear-gradient(to right, transparent, var(--co-grp-50), transparent);transform:translateX(0);transition: transform .5s ease;}
 .fiche .tabs:has(.tab[data-tab="presairl"].selected):after{transform:translateX(100%);}}
 .fiche .tab{padding:var(--gap-s) var(--gap-l);position:relative;}
+.fiche button.tab:hover{color:var(--co-grp);}
 .fiche .tab, .fiche .tab.selected{background:transparent;}
 .presa.tab_content > .grid {grid-template-columns: 1fr 300px;overflow: clip;}
 .presa_main, .presa.tab_content > .grid{max-height: 464px;}
