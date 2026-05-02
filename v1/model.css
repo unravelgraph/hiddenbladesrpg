@@ -1,11 +1,12 @@
-.admin_model{border:var(--border);background: var(--neutralDarker-50);}
+.admin_model{border:var(--border);background: var(--neutralDarker-50);
+ --co1-10: color-mix(in srgb, var(--co1), transparent 80%);}
 .admin_model > br{display:none;}
 .admin_model > div:not(:last-of-type){border-bottom:var(--border);}
 .admin_model_top{position:relative; height:75px; padding-left:var(--gap-l);}
 .admin_model h1.page-title.display-title{opacity: 0.03;right:initial;left:0;font-size:7rem}
 .admin_model_top b{color:var(--co-grp);}
 .admin_model > div:not(.admin_model_top){padding:var(--gap);}
-.admin_model_msg {background: linear-gradient(to right, transparent, var(--co-grp-10));}
+.admin_model_msg {background: linear-gradient(to right, transparent, var(--co1-10));}
 .admin_model_top.grid {grid-template: 1fr/1fr; padding:0;place-items:center;position:relative;}
 .admin_model_top.grid > *{grid-row:1/2;grid-column:1/-1;}
 .admin_model_top.grid > img{position:absolute;filter:grayscale(1);z-index:-1;width:100%;}
