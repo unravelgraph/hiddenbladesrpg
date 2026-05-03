@@ -15,3 +15,4 @@ tag.infos{color:var(--co-grp); font-weight:800;}
 .pl_rel{border-top:var(--border); padding:var(--gap);}
 .pl_rel > *{max-height:65px;overflow:auto;border-radius:5px;}
 .pl_rel > img{aspect-ratio:1/1;}
+.pl_rel > span {padding-right: var(--gap);text-align: justify;}
