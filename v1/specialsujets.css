@@ -8,7 +8,7 @@
     .post_details, .edition-buttons{flex-direction:row;width: fit-content;}
     .edition-buttons [class^="btn-"]:hover .button_name, .rep-button:hover .button_name{bottom:-25px;left:initial;}
     .post_date{writing-mode:horizontal-tb;white-space:nowrap;}
-    .post_message{padding:var(--gap-l);padding-bottom:45px;width:100%;}
+    .post_message{padding:var(--gap-l);padding-bottom:45px;width:100%;justify-content: flex-start;}
     .comment-like{justify-self:end;;display:flex;gap:var(--gap);position:relative; top:-15px;right:var(--gap);}
     .comment-like > button{aspect-ratio:1/1;height:30px;background:var(--neutral-50);display:grid!important;place-items:center;position:relative;}
     .comment-like > button:hover{background:var(--neutral-50)!important;}
